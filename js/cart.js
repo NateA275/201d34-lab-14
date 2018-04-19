@@ -26,28 +26,34 @@ function clearCart() { // fix this to only delete things from tbody
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
   // TODO: Find the table body
-  var cartTable = document.getElementById('cart');
+  var cartTableBody = document.getElementsByTagName('tbody')[0];
   // TODO: Iterate over the items in the cart
-  for (var product of Cart) {
-    // TODO: Create a TR
+  for (var item of Cart) {
+    // Create a TR
     var trEL = document.createElement('tr');
     // TODO: Create a TD for the delete link, quantity,  and the item
-    
-
-    var delTD = document.createElement('td');
+    console.log(item.product.name);
+    console.log(item.quantity);
+    var tdEL;
+    // delete button
+    tdEL = document.createElement('td');
     var delButton = document.createElement('button');
     delButton.textContent = 'X';
-    delTD.appendChild(delButton);
-
+    tdEL.appendChild(delButton);
+    trEL.appendChild(tdEL);
     
+    // quantity
+    tdEL = document.createElement('td');
+    tdEL.textContent = item.quantity;
+    trEL.appendChild(tdEL);
 
-    
-
-
-    var quantity = document.createElement('td');
-    var itemName = document.createElement('td');
+    // item name
+    tdEL = document.createElement('td');
+    tdEL.textContent = item.product.name;
+    trEL.appendChild(tdEL);
     
     // TODO: Add the TR to the TBODY and each of the TD's to the TR
+    cartTableBody.appendChild(trEL);
   }
     
 }
