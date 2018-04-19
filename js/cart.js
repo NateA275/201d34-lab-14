@@ -39,7 +39,7 @@ function showCart() {
     // delete button
     tdEL = document.createElement('td');
     var delButton = document.createElement('button');
-    delButton.textContent = 'X';
+    delButton.textContent = 'Delete this item';
     delButton.cartIndex = i;
     delButton.addEventListener('click', removeItemFromCart);
     tdEL.appendChild(delButton);
