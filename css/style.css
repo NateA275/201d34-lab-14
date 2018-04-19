@@ -1,1 +1,106 @@
-/* TODO: Make it awesome */
+* {
+}
+
+/* BASIC LAYOUT */
+body {
+  font-size: 16px;
+  max-width: 960px;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+}
+
+body > header {
+  display: flex;
+  justify-content: space-between;
+  height: 3em;
+  margin-bottom: 20px;
+}
+
+/* HEADER */
+body > header > h1 {
+  font-size: 2em;
+}
+
+/* NAV ELEMENTS */
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+nav li {
+  height: 100%;
+  width: 100px;
+  line-height: 3em;
+  text-align: center;
+}
+
+/* PRODUCT IMAGES */
+.products {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.products li {
+  width: 20%;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.products p {
+  text-align: center;
+}
+
+.products img {
+  padding: 10px;
+}
+
+/* SUBMIT FORM */
+#catalog {
+  border: 1px solid black;
+  margin-top: 5px;
+  text-align: center;
+}
+
+form {
+  padding: 10px;
+}
+
+#catalog legend {
+  padding: 5px;
+}
+
+/* FOOTER */
+footer {
+  padding: 10px;
+  text-align: center;
+  font-size: .75em;
+}
+
+/* CART TEXT */
+section > div > header > h1,
+.copy > ol > li {
+  text-align: center;
+  padding: 5px;
+}
+
+/* CART TABLE */
+table {
+  border: 1px solid black;
+  margin: auto;
+}
+
+table * {
+  border: 1px solid black;
+  text-align: center;
+  padding: 5px;
+}
