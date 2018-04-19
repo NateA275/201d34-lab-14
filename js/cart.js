@@ -33,7 +33,7 @@ function showCart() {
     // Create a TR
     var trEL = document.createElement('tr');
     // TODO: Create a TD for the delete link, quantity,  and the item
-    console.log(item.product.name);
+    console.log(item.item.name);
     console.log(item.quantity);
     var tdEL;
     // delete button
@@ -52,7 +52,7 @@ function showCart() {
 
     // item name
     tdEL = document.createElement('td');
-    tdEL.textContent = item.product.name;
+    tdEL.textContent = item.item.name;
     trEL.appendChild(tdEL);
 
     // TODO: Add the TR to the TBODY and each of the TD's to the TR
