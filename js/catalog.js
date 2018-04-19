@@ -31,13 +31,24 @@ function handleSubmit(event) {
 
 }
 
-// TODO: Add the selected item and quantity to the cart
+//Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
-  // TODO: suss out the item picked from the select list
-  // TODO: get the quantity
-  // TODO: using those, create a new Cart item instance
 
+  //suss out the item picked from the select list
+  var selectElement = document.getElementById('items');
+  var chosenItem = selectElement.value;
 
+  //get the quantity
+  selectElement = document.getElementById('quantity');
+  var quantity = Number(selectElement.value);
+
+  //using those, create a new Cart item instance
+  for(var i = 0; i < Product.allProducts.length; i++) {
+    if(Product.allProducnts[i].name === chosenItem) {
+      new Cart(Product.allProducts[i], quantity);
+      break;
+    }
+  }
 }
 
 //Save the contents of the cart to Local Storage
