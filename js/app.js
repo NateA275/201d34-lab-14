@@ -2,7 +2,7 @@
 
 'use strict';
 Product.allProducts = [];
-Product.allProductsInCart = [];
+Product.allProductsInCart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Create a "Cart" constructor (named Cart) that has item and quantity
 // properties, and builds an array of items as you create instances
