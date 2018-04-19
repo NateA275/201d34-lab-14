@@ -4,7 +4,7 @@
 Product.allProducts = [];
 Product.allProductsInCart = [];
 
-// TODO: Create a "Cart" constructor (named Cart) that has item and quantity
+// Create a "Cart" constructor (named Cart) that has item and quantity
 // properties, and builds an array of items as you create instances
 function Cart(product, qty) {
   this.product = product;
