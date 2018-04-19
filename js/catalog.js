@@ -73,13 +73,14 @@ function saveCartToLocalStorage() {
 function updateCounter() {
   var itemCountElement = document.getElementById('itemCount');
   var numItems = 0; //Contains total number of items in cart
-  itemCountElement.innerHTML = ''; //Clear inner text
 
+  itemCountElement.innerHTML = ''; //Clear inner text
+  
   for(var i = 0; i < Product.allProductsInCart.length; i++) {
     numItems += Product.allProductsInCart[i].quantity;
   }
-
   itemCountElement.textContent = numItems;
+
 }
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
