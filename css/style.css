@@ -106,3 +106,9 @@ table * {
   text-align: center;
   padding: 5px;
 }
+
+/* ANIMATION */
+.success-animation {
+  transform: scale(1.2);
+  background-color: green;
+}

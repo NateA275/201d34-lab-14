@@ -29,9 +29,10 @@ function handleSubmit(event) {
   updateCounter();
   updateCartPreview();
 
-  // clear form
+  // reset form after submit
   event.target.reset();
-
+  console.log(event.target);
+  event.target.class = 'success-animation'; //not working
 }
 
 //Add the selected item and quantity to the cart
