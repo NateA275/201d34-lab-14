@@ -37,6 +37,7 @@ function addSelectedItemToCart() {
   //suss out the item picked from the select list
   var selectElement = document.getElementById('items');
   var chosenItem = selectElement.value;
+  console.log(chosenItem);
 
   //get the quantity
   selectElement = document.getElementById('quantity');
@@ -44,7 +45,7 @@ function addSelectedItemToCart() {
 
   //using those, create a new Cart item instance
   for(var i = 0; i < Product.allProducts.length; i++) {
-    if(Product.allProducnts[i].name === chosenItem) {
+    if(Product.allProducts[i].name === chosenItem) {
       new Cart(Product.allProducts[i], quantity);
       break;
     }
@@ -53,6 +54,7 @@ function addSelectedItemToCart() {
 
 //Save the contents of the cart to Local Storage
 function saveCartToLocalStorage() {
+  localStorage.removeItem('cart');
   localStorage.setItem('cart', JSON.stringify(Product.allProductsInCart));
 }
 
@@ -63,7 +65,7 @@ function updateCounter() {
   itemCountElement.innerHTML = ''; //Clear inner text
 
   for(var i = 0; i < Product.allProductsInCart.length; i++) {
-    numItems += Product.allProductsInCart[i].qty;
+    numItems += Product.allProductsInCart[i].quantity;
   }
 
   itemCountElement.textContent = numItems;

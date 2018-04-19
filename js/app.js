@@ -9,7 +9,7 @@ Product.allProductsInCart = [];
 function Cart(product, qty) {
   this.product = product;
   this.quantity= qty;
-  allProductsInCart.push(this); 
+  Product.allProductsInCart.push(this); 
 }
 
 // Product Contructor 
