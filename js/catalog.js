@@ -29,6 +29,9 @@ function handleSubmit(event) {
   updateCounter();
   updateCartPreview();
 
+  // clear form
+  event.target.reset();
+
 }
 
 //Add the selected item and quantity to the cart
