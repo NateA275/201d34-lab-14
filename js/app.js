@@ -6,14 +6,14 @@ Product.allProductsInCart = [];
 
 // TODO: Create a "Cart" constructor (named Cart) that has item and quantity
 // properties, and builds an array of items as you create instances
-var Cart = function(product, qty) {
+function Cart(product, qty) {
   this.product = product;
   this.quantity= qty;
   allProductsInCart.push(this); 
 }
 
 // Product Contructor 
-var Product = function(filePath, name) {
+function Product(filePath, name) {
   this.filePath = filePath;
   this.name = name;
   Product.allProducts.push(this);
