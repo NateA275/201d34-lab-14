@@ -26,6 +26,7 @@ function handleSubmit(event) {
   // Do all the things ...
   addSelectedItemToCart();
   saveCartToLocalStorage();
+  event.target.reset(); //Reset input forms
   updateCounter();
   updateCartPreview();
 
@@ -33,28 +34,38 @@ function handleSubmit(event) {
 
 //Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
+  var chosenItem; //Holds Selected Product in *PRODCUCT*
+  var quantity; //Holds number of selected products to add
 
   //suss out the item picked from the select list
-  var selectElement = document.getElementById('items');
-  var chosenItem = selectElement.value;
-  console.log(chosenItem);
-
+  var itemElement = document.getElementById('items');
+  for(var i = 0; i < Product.allProducts.length; i++) {
+    if(itemElement.value === Product.allProducts[i].name) {
+      chosenItem = Product.allProducts[i];
+      console.log(chosenItem);
+    }
+  }    
   //get the quantity
-  selectElement = document.getElementById('quantity');
-  var quantity = Number(selectElement.value);
+  var qtyElement = document.getElementById('quantity');
+  quantity = Number(qtyElement.value);
+  console.log(quantity);
 
   //using those, create a new Cart item instance
-  for(var i = 0; i < Product.allProducts.length; i++) {
-    if(Product.allProducts[i].name === chosenItem) {
-      new Cart(Product.allProducts[i], quantity);
-      break;
+  var flag = true;
+  for(i = 0; i < Product.allProductsInCart.length; i++) {
+    if(Product.allProductsInCart[i].item.name === chosenItem.name) {
+      console.log('Match found in Cart');
+      Product.allProductsInCart[i].quantity += quantity;
+      flag = false;
     }
+  }
+  if(flag) {
+  new Cart(chosenItem, quantity);
   }
 }
 
 //Save the contents of the cart to Local Storage
 function saveCartToLocalStorage() {
-  localStorage.removeItem('cart');
   localStorage.setItem('cart', JSON.stringify(Product.allProductsInCart));
 }
 
